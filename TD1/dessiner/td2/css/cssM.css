@@ -1,10 +1,78 @@
 .background{
     background: #00467F;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #A5CC82, #00467F);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to bottom,  #00467F,#A5CC82);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom,#00467F, #A5CC82 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 bottom: 0;
 left: 0;
 right: 0;
 top: 0;
 position: absolute;
 }
+.moon{
+    position: absolute;
+    width:100px;
+    height: 100px;
+    background-color: yellow;
+    top:310px;
+    left:50px;
+    border-radius: 50%;
+}
+.fondation{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    background-color: gray;
+}
+.toit{
+    position: absolute;
+    display : inline-block;
+    height : 0;
+    width : 0;
+    left: 0;
+    bottom: 400px;
+    border-right : 200px solid transparent;
+    border-bottom : 200px solid red;
+    border-left : 200px solid transparent;
+}
+.Arbre{
+    position: absolute;
+    bottom: 0;
+    right: 150px;
+    width: 75px;
+    height: 500px;    
+    background-color: #754136;
+}
+.Arbre::after{
+    content: "";
+    position: absolute;
+    width:500px;
+    height: 500px;
+    background-color: green;
+    top:-225px;
+    right:-210px;
+    border-radius: 50%;
+
+}
+.moon {
+    animation-duration: 50s;
+    animation-name: glissement;
+  }
+ /* Animation lune  */
+  .aller {
+    animation-direction: normal;
+  }
+  
+
+  @keyframes glissement {
+    from {
+      margin-left: 100%;
+    }
+  
+    to {
+      margin-left: 0%;
+    }
+  }
+  
