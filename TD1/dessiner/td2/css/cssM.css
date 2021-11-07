@@ -11,12 +11,51 @@ position: absolute;
 }
 .moon{
     position: absolute;
-    width:100px;
-    height: 100px;
-    background-color: yellow;
-    top:310px;
+    width:300px;
+    height: 300px;
+    background: #403B4A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #E7E9BB, #403B4A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #E7E9BB, #403B4A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    top:110px;
     left:50px;
     border-radius: 50%;
+}.window{
+    position: absolute;
+    bottom:210px;
+    left:279px;
+    width: 77px;
+    height: 77px;
+    background: #757F9A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius: 25%;}
+.window2{
+    position: absolute;
+    bottom:210px;
+    left:50px;
+    width: 77px;
+    height: 77px;
+    background: #757F9A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius: 25%;
+}
+.window2::after{
+    content: "";
+    clip-path: polygon(29% 0, 67% 0, 59% 34%, 59% 63%, 73% 100%, 27% 100%, 41% 64%, 41% 35%);
+    position: absolute;
+    bottom: 0px;
+    left: -5px;
+
+    width: 88px;
+    height: 78px;
+    background: #fffc00;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffffff, #fffc00);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffffff, #fffc00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .fondation{
     position: absolute;
@@ -24,7 +63,10 @@ position: absolute;
     left: 0;
     width: 400px;
     height: 400px;
-    background-color: gray;
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 .toit{
     position: absolute;
@@ -37,11 +79,29 @@ position: absolute;
     border-bottom : 200px solid red;
     border-left : 200px solid transparent;
 }
+
+
+/* fenetre1 */
+.toit::after{
+    content: "";
+    clip-path: polygon(29% 0, 67% 0, 59% 34%, 59% 63%, 73% 100%, 27% 100%, 41% 64%, 41% 35%);
+    position: absolute;
+    bottom: -391px;
+    left: 74px;
+
+    width: 88px;
+    height: 78px;
+    background: #fffc00;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #ffffff, #fffc00);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #ffffff, #fffc00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
 .Arbre{
     position: absolute;
     bottom: 0;
     right: 150px;
-    width: 75px;
+    width: 100px;
     height: 500px;    
     background-color: #754136;
 }
@@ -50,14 +110,17 @@ position: absolute;
     position: absolute;
     width:500px;
     height: 500px;
-    background-color: green;
+    background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #000000, #0f9b0f); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #000000, #0f9b0f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     top:-225px;
     right:-210px;
     border-radius: 50%;
 
 }
 .moon {
-    animation-duration: 50s;
+    animation-duration: 60s;
     animation-name: glissement;
   }
  /* Animation lune  */
@@ -69,10 +132,127 @@ position: absolute;
   @keyframes glissement {
     from {
       margin-left: 100%;
+      margin-bottom: 100%;
     }
   
     to {
       margin-left: 0%;
+      margin-top: 0%;
+    }
+  } 
+  html, body { height: 100%; }
+  body {
+    background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+    overflow: hidden;
+  }
+  
+  .ocean { 
+    height: 5%;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    background: #015871;
+  }
+  
+  .wave {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+  }
+  
+  @keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
     }
   }
   
+  @keyframes swell {
+    0%, 100% {
+      transform: translate3d(0,-25px,0);
+    }
+    50% {
+      transform: translate3d(0,5px,0);
+    }
+  }
+
+  /* piaf */
+.piaf{
+      left: 159px;
+      bottom: 600px;
+      height: 75px;
+      width: 75px;
+
+      background-color: #000000;
+  clip-path: polygon(48% 48%, 53% 48%, 100% 0, 55% 57%, 51% 57%, 50% 55%, 47% 57%, 0 0);  
+border-radius: 50%;
+  }
+.piaf2{
+  position: absolute;
+  left:259px;
+  bottom:800px;
+  height: 50px;
+  width: 50px;
+
+  background-color: #000000;
+clip-path: polygon(48% 48%, 53% 48%, 100% 0, 55% 57%, 51% 57%, 50% 55%, 47% 57%, 0 0);
+border-radius: 50%;
+}
+.oiseau{
+    position: absolute; 
+    left: 259px;
+      bottom: 600px;
+      height: 75px;
+      width: 75px;
+
+      background-color: #000000;
+  clip-path: polygon(48% 48%, 53% 48%, 100% 0, 55% 57%, 51% 57%, 50% 55%, 47% 57%, 0 0);  
+  border-radius: 50%;
+  }
+
+.oiseau2{
+  position: absolute;
+  left:359px;
+  bottom: 650px;
+  height: 50px;
+  width: 50px;
+
+  background-color: #000000;
+clip-path: polygon(48% 48%, 53% 48%, 100% 0, 55% 57%, 51% 57%, 50% 55%, 47% 57%, 0 0);
+border-radius: 50%;
+}
+
+.porte{
+  position: absolute;
+    width:100px;
+    height: 190px;
+    background-color: orange;
+    top:725px;
+    left:150px;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+}
+.clanche{
+  position: absolute;
+    width:10px;
+    height: 10px;
+    background: #1f1c2c; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1f1c2c, #928dab); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1f1c2c, #928dab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+    top:825px;
+    left:225px;
+    border-radius: 50%;
+}
